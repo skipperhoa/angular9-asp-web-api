@@ -1,0 +1,29 @@
+ul{
+    display: flex;
+    flex-wrap:wrap;
+}
+ul li{
+    width:calc(100% / 4);
+    list-style: none;
+}
+ul li img{
+    width:100px;
+    height: 100px;
+    margin: auto;
+}
+ul li span{
+    display: block;
+    font-size: 20px;
+}
+ul li strong{
+    display: block;
+    font-size: 17px;
+}
+ol li{
+
+padding-right: 5px;
+display: inline-block;
+}
+a{
+  cursor: pointer;
+}

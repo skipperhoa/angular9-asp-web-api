@@ -1,0 +1,19 @@
+<div class="home">
+  <h1>{{title}}</h1>
+  <p>--------------------------------------------------------------------------------------------------</p>
+  <a [routerLink]="'/add-student'">Add Student</a>
+  <ul *ngIf="students">
+    <li *ngFor="let item of students">
+      <img src="../assets/avatar.png"/>
+      <span>{{item.Name}}</span>
+      <strong>Age: {{item.Age}}</strong>
+      <ol *ngFor="let exer of item.StudentExercises">
+        <li>{{exer.Exercise.Name}}</li>
+      </ol>
+      <div style="height: 5px"></div>
+      <a>View</a> |
+      <a [routerLink]="['/edit-student',item.idStudent]">Edit</a> |
+      <a (click)="DeleteStudent(item.idStudent,item)">Delete</a>
+    </li>
+  </ul>
+</div>

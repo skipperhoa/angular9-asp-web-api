@@ -1,0 +1,14 @@
+
+.header{
+    background:#000;
+}
+ul {
+    width:1000px;
+    margin:auto;
+}
+ul li a{
+    color:#fff;
+    display: block;
+    padding: 10px 0px;
+    
+}
