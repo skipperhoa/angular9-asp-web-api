@@ -13,3 +13,39 @@ mở Packeger console lên và chạy lần lượt các câu lệnh sau
 
 Sau khi chạy xong ta được Folder Migrations và ta reset là SQL SERVER của ta sẽ được database vừa tự tạo ra
 
+
+sử dụng WEB API + ANGULAR 9
+- Ta cần cài đặt Cors và tích hợp Cors cho Project Angular 9 và Project ASP WEB API
+- Mở nutget package console trong Project ASP Chạy câu lệnh install thư viện Cors
+Install-Package Microsoft.AspNet.WebApi.Cors
+
+Link:https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api
+
+- Sau khi install xong, ở file WebApiConfig.cs trong thư mục App_Start lên và cấu hình cors
+
+- Còn ở Project Angular 9 cài đặt project bằng cách tạo file proxy.conf.json trong thư mục src/proxy.conf.json copy mã dưới và dán vào file proxy.conf.json
+{
+    "/api": {
+        "target": "https://localhost:44355",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
+
+- Tiếp theo mở file angular.json trong thư mục project root và thêm key "proxyConfig": "src/proxy.conf.json" vào chổ key serve
+"serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "Angular9:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Angular9:build:production"
+            }
+          }
+        }
+
+- Sau khi tạo xong, hay chạy lệnh: ng serve
+- Vậy là xong
+
